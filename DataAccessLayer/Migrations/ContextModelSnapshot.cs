@@ -59,8 +59,8 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("BlogContent")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("BlogCreateDate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("BlogCreateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("BlogImage")
                         .HasColumnType("nvarchar(max)");

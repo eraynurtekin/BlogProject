@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220212134537_mig2")]
-    partial class mig2
+    [Migration("20220214135245_TableCreated")]
+    partial class TableCreated
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -61,8 +61,8 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("BlogContent")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("BlogCreateDate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("BlogCreateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("BlogImage")
                         .HasColumnType("nvarchar(max)");

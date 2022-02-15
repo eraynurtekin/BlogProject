@@ -2,16 +2,17 @@
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
-namespace PresentationLayer.Controllers
+namespace PresentationLayer.ViewComponents.Category
 {
-    public class CategoryController : Controller
+    public class CategoryList :ViewComponent
     {
         CategoryManager categoryManager = new CategoryManager(new EfCategoryRepository());
-        public IActionResult Index()
-        {
-            var values = categoryManager.GetList();
 
+        public IViewComponentResult Invoke()
+        {
+
+            var values = categoryManager.GetList();
             return View(values);
-        }
+        } 
     }
 }
