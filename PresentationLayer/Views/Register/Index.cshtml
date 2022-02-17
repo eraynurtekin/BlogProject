@@ -1,0 +1,113 @@
+﻿@model EntityLayer.Concrete.Writer
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<title>Weblog a Blogging Category Bootstrap responsive WebTemplate | Register :: w3layouts</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Weblog a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link href="css/single.css" rel='stylesheet' type='text/css' />
+	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<link href="css/fontawesome-all.css" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+	    rel="stylesheet">
+</head>
+
+<body>
+	
+	<!--/main-->
+	<section class="main-content-w3layouts-agileits">
+		<div class="container">
+			<h3 class="tittle">Yazarımız Olur Musunuz? </h3>
+				<div class="inner-sec">
+			<div class="login p-5 bg-light mx-auto mw-100">
+				@using(Html.BeginForm("Index","Register",FormMethod.Post)){
+						<div class="form-row">
+								<div class="col-md-6 mb-3">
+										<label for="validationCustom01">Adınız Soyadınız</label>
+									@Html.TextBoxFor(x=>x.WriterName, new {@class="form-control"})
+									@Html.ValidationMessageFor(x=>x.WriterName,"", new {@class = "text-danger"})
+									@*<input type="text" class="form-control" id="validationDefault01" name="WriterName" placeholder="" required="">*@
+								</div>
+								<div class="col-md-6 mb-3">
+										<label for="validationCustom02">EMail Adresi</label>
+										@Html.TextBoxFor(x=>x.WriterMail, new {@class="form-control"})
+									@Html.ValidationMessageFor(x=>x.WriterMail,"", new {@class = "text-danger"})
+									@*<input type="email" class="form-control" id="validationDefault02" name="WriterMail" placeholder="" required="">*@
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-md-6">
+										<label for="exampleInputPassword1 mb-2">Şifre</label>
+										@Html.TextBoxFor(x=>x.WriterPassword, new {@class="form-control"})
+									@Html.ValidationMessageFor(x=>x.WriterPassword,"", new {@class = "text-danger"})
+									@*<input type="password" class="form-control" id="password1" name="WriterPassword" placeholder="" required="">*@
+								</div>
+								
+								<div class="form-group col-md-6">
+										<label for="exampleInputPassword1 mb-2">Şifre Onay</label>
+										@Html.TextBoxFor(x=>x.WriterConfirmPassword, new {@class="form-control"})
+									@Html.ValidationMessageFor(x=>x.WriterConfirmPassword,"", new {@class = "text-danger"})
+									@*<input type="password" class="form-control" id="password2" name="WriterConfirmPassword" placeholder="" required="">*@
+								</div>
+								<div class="form-group col-md-6">
+										<label for="exampleInputPassword2 mb-2">Görsel Dosya Yolu</label>
+										@Html.TextBoxFor(x=>x.WriterImage, new {@class="form-control"})
+									@Html.ValidationMessageFor(x=>x.WriterImage,"", new {@class = "text-danger"})
+										@*<input type="text" class="form-control" id="görselDosyaYolu" name="WriterImage" placeholder="" required="">*@
+									</div>
+
+							
+					<br /><br />
+							</div>
+							<button type="submit" class="btn btn-primary submit mb-4">Kayıt Ol</button>
+								<p>
+									<a href="#" id="btn1">Tüm şartları okudum kabul ediyorum.</a>
+								</p>
+						
+		}
+					</div>
+			</div>
+		</div>
+	</section>
+	
+	<script>
+		$('#btn1').click(function(){
+
+			swal("Site Kabul Şartları","Sitemizde verdiğiniz mail adresi üzerinden bilgi ve haber e-postaları spam ölçüsüne varmadan gönderilmeye devam edilecektir. Eğer e-posta bülteninden çıkmak isterseniz mail ileti dizisini durdurabilirsiniz,şifre ve mail adresiniz veritabanında gizlilikle saklanmaktadır.");
+
+		});
+
+
+	</script>
+</body>
+
+</html>
+
