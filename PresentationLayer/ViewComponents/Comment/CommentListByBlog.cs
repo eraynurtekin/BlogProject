@@ -10,7 +10,7 @@ namespace PresentationLayer.ViewComponents.Comment
         public IViewComponentResult Invoke(int id)
         {
    
-            var values = commentManager.GetList(id);
+            var values = commentManager.GetList(1);
             return View(values);
         }
     }
