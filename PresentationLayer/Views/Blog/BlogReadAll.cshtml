@@ -76,15 +76,12 @@
 						<div class="tech-btm">
 							<img src="~/web/images/banner1.jpg" class="img-fluid" alt="">
 						</div>
-						<div class="tech-btm">
-							<h4>Abone Ol</h4>
-							<p>Diğer bültenlerimizden yararlanabilmek için abone ol... </p>
-							<form action="#" method="post">
-								<input type="email" placeholder="Email" required="">
-								<input type="submit" value="Subscribe">
-							</form>
 
-						</div>
+						@*@await Component.InvokeAsync("NewsLetterByUser")*@
+
+						@await Html.PartialAsync("~/Views/NewsLetter/SubscribeMail.cshtml")
+
+						
 						<div class="tech-btm">
 							@await Component.InvokeAsync("CategoryList")
 						</div>
