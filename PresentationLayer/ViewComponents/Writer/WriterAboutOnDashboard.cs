@@ -4,15 +4,16 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace PresentationLayer.ViewComponents.Writer
 {
-    public class WriterMessageNotification : ViewComponent
+    
+    public class WriterAboutOnDashboard : ViewComponent
     {
-        Message2Manager messageManager = new Message2Manager(new EfMessage2Repository());
+        WriterManager writerManager = new WriterManager(new EfWriterRepository());
+
         public IViewComponentResult Invoke()
         {
-
-            int id = 1;
-            var values = messageManager.GetInboxListByWriter(id);
+            var values = writerManager.GetWriterById(1);
             return View(values);
         }
+
     }
 }

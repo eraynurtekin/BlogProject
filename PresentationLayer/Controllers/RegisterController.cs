@@ -32,7 +32,7 @@ namespace PresentationLayer.Controllers
                 writer.WriterStatus = true;
                 writer.WriterAbout = "Deneme Test";
 
-                writerManager.WriterAdd(writer);
+                writerManager.TAdd(writer);
                 return RedirectToAction("Index", "Blog");
             }
             else
