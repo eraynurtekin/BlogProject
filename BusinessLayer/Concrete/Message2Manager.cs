@@ -16,6 +16,12 @@ namespace BusinessLayer.Concrete
         {
             this._message2Dal = message2Dal;
         }
+
+        public int GetCount()
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Message2> GetInboxListByWriter(int id)
         {  
             return _message2Dal.GetListWithMessageByWriter(id);

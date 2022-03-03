@@ -17,6 +17,11 @@ namespace BusinessLayer.Concrete
             _writerDal = writerDal;
         }
 
+        public int GetCount()
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Writer> GetList()
         {
             throw new NotImplementedException();
@@ -25,6 +30,11 @@ namespace BusinessLayer.Concrete
         public List<Writer> GetWriterById(int id)
         {
             return _writerDal.GetListAll(x => x.WriterID == id);
+        }
+
+        public List<Writer> GetWritersWithBlog()
+        {
+            return _writerDal.GetListWithBlog();
         }
 
         public void TAdd(Writer t)

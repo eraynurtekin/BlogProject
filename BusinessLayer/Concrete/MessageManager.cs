@@ -46,5 +46,10 @@ namespace BusinessLayer.Concrete
         {
             return _messageDal.GetListAll(x => x.Receiver == mail);
         }
+
+        public int GetCount()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

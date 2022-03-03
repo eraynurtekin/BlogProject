@@ -16,6 +16,12 @@ namespace BusinessLayer.Concrete
         {
             _notificationDal = notificationDal;
         }
+
+        public int GetCount()
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Notification> GetList()
         {
             return _notificationDal.GetListAll();

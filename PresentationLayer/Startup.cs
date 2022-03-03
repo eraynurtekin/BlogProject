@@ -25,7 +25,7 @@ namespace PresentationLayer
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        { 
+        {
             services.AddControllersWithViews();
 
             services.AddSession();
@@ -62,7 +62,7 @@ namespace PresentationLayer
                 app.UseHsts();
             }
 
-            app.UseStatusCodePagesWithReExecute("/ErrorPage/Error1","?code={0}");
+            app.UseStatusCodePagesWithReExecute("/ErrorPage/Error1", "?code={0}");
 
             app.UseSession();
 
@@ -75,6 +75,13 @@ namespace PresentationLayer
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+            name: "areas",
+            pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+          );
+
+
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Blog}/{action=Index}/{id?}");

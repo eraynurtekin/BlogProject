@@ -11,7 +11,7 @@ namespace PresentationLayer.Controllers
     {
         BlogManager blogManager = new BlogManager(new EfBlogRepository());
 
-        [AllowAnonymous]
+        
         public IActionResult Index()
         {
             Context context = new Context();
