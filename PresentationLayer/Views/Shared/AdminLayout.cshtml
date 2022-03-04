@@ -11,12 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Admin Paneli</title>
-
+   
     <link href="~/AdminPanel/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/AdminPanel/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="~/AdminPanel/css/plugins/iCheck/custom.css" rel="stylesheet">
     <link href="~/AdminPanel/css/animate.css" rel="stylesheet">
     <link href="~/AdminPanel/css/style.css" rel="stylesheet">
+
 
 </head>
 
@@ -181,9 +182,6 @@
 
         </div>
     </div>
-
-
-
     <!-- Mainly scripts -->
     <script src="~/AdminPanel/js/jquery-3.1.1.min.js"></script>
     <script src="~/AdminPanel/js/popper.min.js"></script>
@@ -191,6 +189,9 @@
     <script src="~/AdminPanel/js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="~/AdminPanel/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
+
+
+    
     <!-- Peity -->
     <script src="~/AdminPanel/js/plugins/peity/jquery.peity.min.js"></script>
 
@@ -211,7 +212,10 @@
                 radioClass: 'iradio_square-green',
             });
         });
-    </script>
+        </script>
+        @await RenderSectionAsync("scripts")
+
+    
 
 </body>
 
