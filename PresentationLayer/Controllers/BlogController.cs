@@ -18,12 +18,14 @@ namespace PresentationLayer.Controllers
     {
         BlogManager blogManager = new BlogManager(new EfBlogRepository());
         CategoryManager categoryManager = new CategoryManager(new EfCategoryRepository());
-        Context context = new Context(); 
+        Context context = new Context();
+        [AllowAnonymous]
         public IActionResult Index()
         {
             var values = blogManager.GetBlogListWithCategory();
             return View(values);
         }
+        [AllowAnonymous]
 
         public IActionResult BlogReadAll(int id)
         {

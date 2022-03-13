@@ -51,8 +51,11 @@ namespace PresentationLayer.Controllers
         [HttpGet]
         public IActionResult WriterEditProfile()
         {
-            var userMail = User.Identity.Name;
-            var writerID = context.Writers.Where(x => x.WriterMail == userMail).Select(y => y.WriterID).FirstOrDefault();
+            Context context = new Context();
+
+            var username = User.Identity.Name;
+            var usermail = context.Users.Where(x=>x.UserName == username).Select(y=>y.Email).FirstOrDefault();
+            var writerID = context.Writers.Where(x => x.WriterMail == usermail).Select(y => y.WriterID).FirstOrDefault();
 
             var writerValues = writerManager.TGetById(writerID);
             return View(writerValues);
